@@ -13,6 +13,7 @@ router.post('/',
         validateRequest,
     ],
     UserController.createUser);
+router.get('/:id', UserController.getUserById);
 
 module.exports = router;
 

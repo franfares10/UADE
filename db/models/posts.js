@@ -1,7 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
+
 module.exports = (sequelize) => {
-    const Post = sequelize.define('Posts', {
+    const Post = sequelize.define('Post', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -11,21 +12,31 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             references: {
                 model: 'Users',
-                key: 'id'
-            }
+                key: 'id',
+            },
         },
         productId: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'Products',
-                key: 'id'
-            }},
-        title: DataTypes.STRING,
-        content: DataTypes.STRING,
-        imageUrl: DataTypes.STRING,
+                key: 'id',
+            },
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        imageUrl: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+    }, {
+        timestamps: true,
     });
 
-
-
     return Post;
-}
+};
