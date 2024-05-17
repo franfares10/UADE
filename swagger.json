@@ -1,0 +1,65 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+	  "title": "Clase_Backend_II",
+	  "version": "1.0.0"
+	},
+	"paths": {
+	  "/api/users/": {
+		"post": {
+		  "summary": "Create a new user",
+		  "requestBody": {
+			"content": {
+			  "application/json": {
+				"example": {
+				  "username": "ffares",
+				  "email": "franciscofares23@gmail.com"
+				}
+			  }
+			}
+		  },
+		  "responses": {}
+		}
+	  },
+	  "/api/products/1": {
+		"get": {
+		  "summary": "Get product by ID",
+		  "responses": {}
+		}
+	  },
+	  "/api/posts/": {
+		"post": {
+		  "summary": "Create a new post",
+		  "requestBody": {
+			"content": {
+			  "multipart/form-data": {
+				"schema": {
+				  "type": "object",
+				  "properties": {
+					"file": {
+					  "type": "string",
+					  "format": "binary"
+					},
+					"authorId": {
+					  "type": "string"
+					},
+					"productId": {
+					  "type": "string"
+					},
+					"title": {
+					  "type": "string"
+					},
+					"content": {
+					  "type": "string"
+					}
+				  }
+				}
+			  }
+			}
+		  },
+		  "responses": {}
+		}
+	  }
+	}
+  }
+  
