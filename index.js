@@ -1,16 +1,19 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const multer = require('multer');
 const swagger = require('swagger-ui-express');
 
-const { sequelize } = require('./db/db');
+const {
+    sequelize
+} = require('./db/db');
 
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));    
+app.use(express.urlencoded({
+    extended: true
+}));
 
 app.get('/', (req, res) => {
     res.send('Welcome to the server');
