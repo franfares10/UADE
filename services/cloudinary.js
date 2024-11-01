@@ -18,7 +18,6 @@ const uploadImage = async (imageBuffer) => {
             }).end(imageBuffer);
         })
         .then((result) => {
-            console.log(result)
             return result;
         })
 
